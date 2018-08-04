@@ -25,9 +25,6 @@ Allowing arbitrary machines to access the JSON-RPC port (using the rpcallowip co
 
 To access the server you should find a [http://json-rpc.org/wiki/implementations suitable library] for your language.
 
-== Proper money handling ==
-
-See the [[Proper Money Handling (JSON-RPC)|proper money handling page]] for notes on avoiding rounding errors when handling Lobstex values.
 
 == Python ==
 
