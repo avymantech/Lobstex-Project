@@ -9,8 +9,8 @@ Now run:
   Lobstex server starting
   $ ./lobstex-cli -rpcwait help
   # shows the help text
-
-A [[API Calls list|list of RPC calls]] will be shown.
+  
+List of RPC calls [https://github.com/avymantech/Lobstex-Project/blob/master/Developer-Documentation/APIs/JSON-RPC/API-Calls-List.mediawiki] given in another sheet
 
   $ ./lobstex-cli getbalance
   2000.00000
@@ -21,7 +21,7 @@ A [[API Calls list|list of RPC calls]] will be shown.
 Running Lobstex with the -server argument (or running lobstexd) tells it to function as a [http://json-rpc.org/wiki/specification HTTP JSON-RPC] server, but
 [http://en.wikipedia.org/wiki/Basic_access_authentication Basic access authentication] must be used when communicating with it, and, for security, by default, the server only accepts connections from other processes on the same machine.  If your HTTP or JSON library requires you to specify which 'realm' is authenticated, use 'jsonrpc'.
 
-Allowing arbitrary machines to access the JSON-RPC port (using the rpcallowip [[Running Lobstex|configuration option]]) is dangerous and '''strongly discouraged'''-- access should be strictly limited to trusted machines.
+Allowing arbitrary machines to access the JSON-RPC port (using the rpcallowip configuration option is dangerous and '''strongly discouraged'''-- access should be strictly limited to trusted machines.
 
 To access the server you should find a [http://json-rpc.org/wiki/implementations suitable library] for your language.
 
