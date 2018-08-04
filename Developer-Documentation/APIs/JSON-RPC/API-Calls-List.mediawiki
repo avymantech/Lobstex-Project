@@ -163,7 +163,7 @@ otherwise connected information will also be available. || N
 |-
 | <code>createrawtransaction</code> || [{"txid":txid,"vout":n},...] {address:amount,...} || Creates a Raw Transactions spending given inputs. || N
 |-
-| <code>decoderawtransaction</code> || &lt;hex string&gt; || Produces a human-readable JSON object for a [[Raw Transactions|raw transaction]]. || N
+| <code>decoderawtransaction</code> || &lt;hex string&gt; || Produces a human-readable JSON object for a Raw Transaction. || N
 |-
 | <code>decodescript</code> || &lt;hex&gt; || Decode a hex-encoded script. || N
 |-
