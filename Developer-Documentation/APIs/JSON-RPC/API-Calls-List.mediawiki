@@ -6,7 +6,6 @@ LOBSTEX API call list (as of version 2.1.1)
 
 Listing the Lobstex address in your wallet is easily done via ''listreceivedbyaddress''. It normally lists only addresses which already have received transactions, however you can list all the addresses by setting the first argument to 0, and the second one to true.
 
-[[accounts explained|Accounts]] are used to organize addresses.
 
 == Full list ==
 
