@@ -114,7 +114,7 @@ These commands are accurate as of Lobstex Core version '''v2.1.1'''.
 |-
 | &nbsp; || -timeout=&lt;n&gt; || Specify connection timeout in milliseconds (minimum: 1, default: 5000)
 |-
-| &nbsp; || -torcontrol=&lt;ip:port&gt; || Tor control port to use if onion listening enabled (default: 127.0.0.1:9051)
+| &nbsp; || -torcontrol=&lt;ip:port&gt; || Tor control port to use if onion listening enabled (default: 127.0.0.1:15156)
 |-
 | &nbsp; || -torpassword=&lt;pass&gt; || Tor control port password (default: empty)
 |-
@@ -297,7 +297,7 @@ All command-line options (except for -conf) may be specified in a configuration 
 
 The configuration file is a list of setting=value pairs, one per line, with optional comments starting with the '#' character.
 
-An empty configuration file is automatically created on first run. By default, Lobstex (or lostexd) will look for a file named 'lostex.conf' in the Lobstex [[data directory]], but both the data directory and the configuration file path may be changed using the -datadir and -conf command-line arguments.
+An empty configuration file is automatically created on first run. By default, Lobstex (or lostexd) will look for a file named 'lostex.conf' in the Lobstex data directory, but both the data directory and the configuration file path may be changed using the -datadir and -conf command-line arguments.
 {|
 ! Operating System
 ! Default Lobstex datadir
