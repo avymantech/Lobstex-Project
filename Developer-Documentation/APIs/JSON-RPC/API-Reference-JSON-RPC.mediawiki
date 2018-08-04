@@ -10,7 +10,7 @@ Now run:
   $ ./lobstex-cli -rpcwait help
   # shows the help text
   
-List of RPC calls [https://github.com/avymantech/Lobstex-Project/blob/master/Developer-Documentation/APIs/JSON-RPC/API-Calls-List.mediawiki] given in another sheet
+List of [https://github.com/avymantech/Lobstex-Project/blob/master/Developer-Documentation/APIs/JSON-RPC/API-Calls-List.mediawiki RPC calls ] given in another sheet
 
   $ ./lobstex-cli getbalance
   2000.00000
