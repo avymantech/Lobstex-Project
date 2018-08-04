@@ -1,35 +1,35 @@
-The data directory is the location where PIVX's data files are stored, including the [[Wallet|wallet]] data file.
+The data directory is the location where Lobstex's data files are stored, including the [[Wallet|wallet]] data file.
 
 ==Default Location==
 === Windows ===
 
 Go to Start -> Run (or press WinKey+R) and run this:
 
- %APPDATA%\PIVX
+ %APPDATA%\lobstex
 
-PIVX's data folder will open. For most users, this is the following locations:
+Lobstex's data folder will open. For most users, this is the following locations:
 
- C:\Documents and Settings\YourUserName\Application data\PIVX (XP)
+ C:\Documents and Settings\YourUserName\Application data\lobstex (XP)
 
- C:\Users\YourUserName\Appdata\Roaming\PIVX (Vista and 7)
+ C:\Users\YourUserName\Appdata\Roaming\lobstex (Vista and 7)
 
 "AppData" and "Application data" are hidden by default.
 
-You can also store PIVX data files in any other drive or folder.
+You can also store lobstex data files in any other drive or folder.
 
 If you have already downloaded the data then you will have to move the data to the new folder.
-If you want to store them in D:\PIVXData then click on "Properties" of a shortcut to PIVX-qt.exe and
-add -datadir=D:\PIVXData at the end as an example:
+If you want to store them in D:\lobstexData then click on "Properties" of a shortcut to lobstex-qt.exe and
+add -datadir=D:\lobstexData at the end as an example:
 
- "C:\Program Files (x86)\PIVX\PIVX-qt.exe" -datadir=d:\PIVXData
+ "C:\Program Files (x86)\lobstex\lobstex-qt.exe" -datadir=d:\lobstexData
 
-Start PIVX, now you will see all the files are created in the new data directory.
+Start Lobstex, now you will see all the files are created in the new data directory.
 
 === Linux ===
 
-By default PIVX will put its data here:
+By default Lobstex will put its data here:
 
- ~/.pivx/
+ ~/.lobstex/
 
 You need to do a "ls -a" to see directories that start with a dot.
 
@@ -39,27 +39,27 @@ If that's not it, you can do a search like this:
 
 === Mac ===
 
-By default PIVX will put its data here:
+By default Lobstex will put its data here:
 
- ~/Library/Application Support/PIVX/
+ ~/Library/Application Support/lobstex/
 
 ==Directory Contents==
 
 ===Files===
 
-An overview of these is in [https://github.com/pivx-project/pivx/blob/master/doc/files.md files.md] in the PIVX Core documentation.
+An overview of these files:
 
 * .lock
-** PIVX data directory lock file
-* pivx.conf [optional]
-**Contains [[Running-PIVX#Pivxconf_Configuration_File|configuration options]].
+** lobstex data directory lock file
+* lobstex.conf [optional]
+**Contains [[Running-lobstex#lobstexconf_Configuration_File|configuration options]].
 * __db.''xxx''
 **Used by BDB
 * db.log
 * debug.log
-**PIVX's verbose log file. Automatically trimmed from time to time.
+**lobstex's verbose log file. Automatically trimmed from time to time.
 * wallet.dat
-**Storage for keys, transactions, metadata, and options. <span style="color:red">Please be sure to make backups of this file.  It contains the keys necessary for spending your PIV.</span>
+**Storage for keys, transactions, metadata, and options. <span style="color:red">Please be sure to make backups of this file.  It contains the keys necessary for spending your lobs.</span>
 * peers.dat
 ** Storage for peer information to make a reconnect easier.  This file uses a bitcoin-standard file format, unrelated to any database system<ref>[http://bitcointalk.org/index.php?topic=119525.msg1287284#msg1287284 Ultraprune merged in mainline]</ref>.
 * fee_estimates.dat
@@ -72,7 +72,7 @@ An overview of these is in [https://github.com/pivx-project/pivx/blob/master/doc
 ** Stores data for masternode list
 * mnpayments.dat
 ** Stores data for masternode payments
-The data, index and log files are used by Oracle [http://en.wikipedia.org/wiki/Berkeley_DB Berkeley DB], the embedded key/value data store that PIVX uses.
+The data, index and log files are used by Oracle [http://en.wikipedia.org/wiki/Berkeley_DB Berkeley DB], the embedded key/value data store that lobstex uses.
 
 ===database subdirectory===
 Contains BDB journaling files
@@ -102,19 +102,19 @@ You can see blocks as 'patches' to the chain state (they consume some unspent ou
 A LevelDB database containing information pertaining to the various sporks and their current values. This data is used during and after syncing as part of the network's consensus rules.
 
 ===zerocoin subdirectory===
-A LevelDB database containing information about all zPIV transactions
+A LevelDB database containing information about all zLOBS transactions
 
 ===Personally identifiable data===
 This section may be of use to you if you wish to send a friend the blockchain, avoiding them a hefty download.
 
 *wallet.dat
-**Contains addresses and transactions linked to them. <span style="color:red">Please be sure to make backups of this file.  It contains the keys necessary for spending your PIV.</span> You should not transfer this file to any third party or they may be able to access your PIV.
+**Contains addresses and transactions linked to them. <span style="color:red">Please be sure to make backups of this file.  It contains the keys necessary for spending your LOBS.</span> You should not transfer this file to any third party or they may be able to access your LOBS.
 *db.log
 **May contain information pertaining to your wallet. It may be safely deleted.
 *debug.log
 **May contain IP addresses and transaction ID's. It may be safely deleted.
 *database/ folder
-**This should only exist when pivx-qt is currently running. It contains information (BDB state) relating to your wallet.
+**This should only exist when lostex-qt is currently running. It contains information (BDB state) relating to your wallet.
 *peers.dat
 **Unknown whether this contains personally identifiable data. It may be safely deleted.
 
@@ -122,18 +122,10 @@ Other files and folders (blocks, blocks/index, chainstate, sporks, zerocoin) may
 
 ==Transferability==
 
-The database files in the "blocks", "chainstate", "sporks", and "zerocoin" directories are cross-platform, and can be copied between different installations. These files, known collectively as a node's "block database", represent all of the information downloaded by a node during the syncing process. In other words, if you copy installation A's block database into installation B, installation B will then have the same syncing percentage as installation A. This is usually ''far'' faster than doing the normal initial sync over again. However, when you copy someone's database in this way, you are trusting them '''absolutely'''. PIVX Core treats its block database files as 100% accurate and trustworthy, whereas during the normal initial sync it treats each block offered by a peer as invalid until proven otherwise. If an attacker is able to modify your block database files, then they can do all sorts of evil things which could cause you to lose PIV. Therefore, you should only copy block databases from PIVX installations under your personal control, and only over a secure connection.
+The database files in the "blocks", "chainstate", "sporks", and "zerocoin" directories are cross-platform, and can be copied between different installations. These files, known collectively as a node's "block database", represent all of the information downloaded by a node during the syncing process. In other words, if you copy installation A's block database into installation B, installation B will then have the same syncing percentage as installation A. This is usually ''far'' faster than doing the normal initial sync over again. However, when you copy someone's database in this way, you are trusting them '''absolutely'''. lostex Core treats its block database files as 100% accurate and trustworthy, whereas during the normal initial sync it treats each block offered by a peer as invalid until proven otherwise. If an attacker is able to modify your block database files, then they can do all sorts of evil things which could cause you to lose Lobs. Therefore, you should only copy block databases from lostex installations under your personal control, and only over a secure connection.
 
 Each node has a unique block database, and all of the files are highly connected. So if you copy just a few files from one installation's "blocks", "chainstate", "sporks", or "zerocoin" directories into another installation, this will almost certainly cause the second node to crash or get stuck at some random point in the future. If you want to copy a block database from one installation to another, you have to delete the old database and copy ''all'' of the files at once. Both nodes have to be shut down while copying.
 
 Only the file with the highest number in the "blocks" directory is ever written to. The earlier files will never change. Also, when these blk*.dat files are accessed, they are usually accessed in a highly sequential manner. Therefore, it's possible to symlink the "blocks" directory or some subset of the blk*.dat files individually onto a magnetic storage drive without much loss in performance (see [[Splitting the data directory]]), and if two installations start out with identical block databases (due to the copying described previously), subsequent runs of rsync will be very efficient.
 
-==See Also==
 
-* [[Running PIVX]]
-* [[Securing your wallet]]
-* [[Splitting the data directory]]
-* [http://bitcoin.stackexchange.com/a/11108/153 What is the database for?] Question on Bitcoin Stack Exchange
-
-==References==
-<references />
