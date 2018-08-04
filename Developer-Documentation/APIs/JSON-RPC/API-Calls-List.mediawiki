@@ -58,7 +58,7 @@ This can be used to undo the effects of invalidateblock. || N
 |-
 !colspan="4" | Generating
 |-
-| <code>getgenerate</code> || &nbsp; || '''PoW Only''' Return if the server is set to generate coins or not. The default is false. It is set with the command line argument -gen (or pivx.conf setting gen) It can also be set with the setgenerate call. || N
+| <code>getgenerate</code> || &nbsp; || '''PoW Only''' Return if the server is set to generate coins or not. The default is false. It is set with the command line argument -gen (or lobstex.conf setting gen) It can also be set with the setgenerate call. || N
 |-
 | <code>setgenerate</code> || &lt;generate&gt; [genproclimit] || '''PoW Only''' Set 'generate' true or false to turn generation on or off. Generation is limited to 'genproclimit' processors, -1 is unlimited. See the getgenerate call for the current setting. || N
 |-
@@ -151,13 +151,13 @@ otherwise connected information will also be available. || N
 |-
 | <code>mnsync</code> || &lt;status&#124;reset&gt; || Returns the sync status or resets sync. || N
 |-
-| <code>preparebudget</code> || &lt;proposal-name&gt; &lt;url&gt; &lt;payment-count&gt; &lt;block-start&gt; &lt;pivx-address&gt; &lt;monthly-payment&gt; || Prepare proposal for network by signing and creating tx. || Y
+| <code>preparebudget</code> || &lt;proposal-name&gt; &lt;url&gt; &lt;payment-count&gt; &lt;block-start&gt; &lt;lobstex-address&gt; &lt;monthly-payment&gt; || Prepare proposal for network by signing and creating tx. || Y
 |-
 | <code>spork</code> || &lt;show&#124;active&gt; || Print raw value or active status of sporks. || N
 |-
 | <code>startmasternode</code> || &lt;local&#124;all&#124;many&#124;missing&#124;disabled&#124;alias&gt; &lt;lockwallet&gt; [alias] || Attempts to start one or more masternode(s). || Y/N
 |-
-| <code>submitbudget</code> || &lt;proposal-name&gt; &lt;url&gt; &lt;payment-count&gt; &lt;block-start&gt; &lt;pivx-address&gt; &lt;monthly-payment&gt; &lt;fee-tx&gt; || Submit proposal to the network. || N
+| <code>submitbudget</code> || &lt;proposal-name&gt; &lt;url&gt; &lt;payment-count&gt; &lt;block-start&gt; &lt;lobstex-address&gt; &lt;monthly-payment&gt; &lt;fee-tx&gt; || Submit proposal to the network. || N
 |-
 !colspan="4" | Raw Transactions
 |-
@@ -181,7 +181,7 @@ otherwise connected information will also be available. || N
 |-
 | <code>estimatepriority</code> || &lt;nblocks&gt; || Estimates the approximate priority a zero-fee transaction needs to begin confirmation within nblocks blocks. || N
 |-
-| <code>validateaddress</code> || &lt;lobstexaddress&gt; || Return information about the given pivx address. || N
+| <code>validateaddress</code> || &lt;lobstexaddress&gt; || Return information about the given lobstex address. || N
 |-
 | <code>verifymessage</code> || &lt;lobstexaddress&gt; &lt;signature&gt; &lt;message&gt; || Verify a signed message. || N
 |-
@@ -310,7 +310,7 @@ Note it is recommended to use the json export created from the exportzerocoins R
 |-
 | <code>resetspentzerocoin</code> || &nbsp; || Scan the blockchain for all of the zerocoins that are held in the wallet.dat. Reset mints that are considered spent that did not make it into the blockchain. || Y
 |-
-| <code>spendzerocoin</code> || &lt;amount&gt; &lt;mintchange&gt; &lt;minimizechange&gt; &lt;seclevel&gt; &lt;address&gt; || Spend zPIV to given address with optional reminting of change. || Y
+| <code>spendzerocoin</code> || &lt;amount&gt; &lt;mintchange&gt; &lt;minimizechange&gt; &lt;seclevel&gt; &lt;address&gt; || Spend zLOBS to given address with optional reminting of change. || Y
 |}
 
 ==Error Codes==
