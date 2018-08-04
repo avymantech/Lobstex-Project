@@ -52,7 +52,7 @@ An overview of these files:
 * .lock
 ** lobstex data directory lock file
 * lobstex.conf [optional]
-**Contains [[Running-lobstex#lobstexconf_Configuration_File|configuration options]].
+**Contains configuration options
 * __db.''xxx''
 **Used by BDB
 * db.log
